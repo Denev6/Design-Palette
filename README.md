@@ -1,1 +1,3 @@
-Palette
+# Palette
+
+with Tailwind CSS
