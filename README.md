@@ -1,3 +1,5 @@
-# Palette
+# Palette - 낙서장
 
-with Tailwind CSS
+- Tailwind CSS
+- Netlify
+- Font Awesome

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../src/fav/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../src/fav/favicon.ico" type="image/x-icon">
+    <link href="../src/reset.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/0ff72898c7.js" crossorigin="anonymous"></script>
+    <title>Palette</title>
+</head>
+
+<body class="text-center text-xl tracking-widest bg-neutral-900">
+    <style>
+        @keyframes neon-flicker {
+
+            0%,
+            60%,
+            100% {
+                text-shadow:
+                    0 0 5px #ccccff,
+                    0 0 30px #5757ff,
+                    0 0 40px #6868ff,
+                    0 0 50px #8989FF;
+            }
+
+            30% {
+                text-shadow: none;
+            }
+        }
+
+        .neon-on {
+            color: #ccccff;
+            animation: neon-flicker 2s infinite alternate;
+        }
+
+        .neon-off {
+            color: #ccccff88;
+        }
+    </style>
+    <a href="../index.html" class="fixed w-6 h-6 inset-6 font-bold text-white invisible lg:visible">P</a>
+    <div class="h-36">
+        <!--margin-->
+    </div>
+    <div class="w-96 mx-auto">
+        <div class="mx-auto mt-40 p-12 rounded-3xl font-bold text-4xl bg-neutral-800/20 shadow-inner shadow-black">
+            <span id="neon" class="neon-on">PALETTE</span>
+        </div>
+        <div class="mx-auto my-10 text-white/70">
+            <i class="fa-solid fa-pause mx-8 cursor-pointer" onclick="deactivate()"></i>
+            <i class="fa-solid fa-play mx-8 cursor-pointer" onclick="activate()"></i>
+        </div>
+    </div>
+    <script>
+        function activate() {
+            document.getElementById("neon").className = "neon-on"
+        }
+
+        function deactivate() {
+            document.getElementById("neon").className = "neon-off"
+        }
+    </script>
+</body>
+
+</html>
