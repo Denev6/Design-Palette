@@ -2,4 +2,4 @@
 
 - Tailwind CSS
 - Netlify
-- Font Awesome
+- Bootstrap Icons

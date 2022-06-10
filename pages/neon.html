@@ -9,7 +9,7 @@
     <link rel="icon" href="../src/fav/favicon.ico" type="image/x-icon">
     <link href="../src/reset.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://kit.fontawesome.com/0ff72898c7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <title>Palette</title>
 </head>
 
@@ -49,9 +49,17 @@
         <div class="mx-auto mt-40 p-12 rounded-3xl font-bold text-4xl bg-neutral-800/20 shadow-inner shadow-black">
             <span id="neon" class="neon-on">PALETTE</span>
         </div>
-        <div class="mx-auto my-10 text-white/70">
-            <i class="fa-solid fa-pause mx-8 cursor-pointer" onclick="deactivate()"></i>
-            <i class="fa-solid fa-play mx-8 cursor-pointer" onclick="activate()"></i>
+        <div class="mx-auto my-10 text-white/70 inline-block">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                class="bi bi-pause-fill cursor-pointer mx-8 inline-block" onclick="deactivate()" viewBox="0 0 16 16">
+                <path
+                    d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                class="bi bi-play-fill cursor-pointer mx-8 inline-block" onclick="activate()" viewBox="0 0 16 16">
+                <path
+                    d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
+            </svg>
         </div>
     </div>
     <script>
