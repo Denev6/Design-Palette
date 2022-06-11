@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../src/fav/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../src/fav/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link href="../src/reset.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Palette</title>
+</head>
+
+<body>
+    <!-- add color transition time -->
+    <style>
+        .slide-in {
+            position: absolute;
+            animation: slideIn 2s ease-in-out forwards;
+        }
+
+        .blinker {
+            opacity: 0.5;
+            animation: blinker 2.5s linear infinite;
+        }
+
+        @keyframes slideIn {
+            from {
+                left: -450px;
+                opacity: 0.2;
+            }
+
+            to {
+                left: 100px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes blinker {
+            50% {
+                opacity: 0.2;
+            }
+        }
+    </style>
+    <script>
+        getPassword();
+
+        function getPassword() {
+            const pw = "보라빛달";
+            input = prompt("아직 테스트 단계입니다.", "비밀번호 입력");
+            if (input == pw) {
+                return;
+            } else {
+                return getPassword();
+            }
+        }
+    </script>
+    <a href="../index.html" class="fixed w-6 h-6 inset-6 font-bold invisible lg:visible">P</a>
+    <div class="h-screen w-screen pt-60 text-4xl leading-normal">
+        <div class="slide-in">
+            <span class="text-6xl leading-loose">Welcome to Palette.<br></span>
+            Scroll down to<br>
+            check the animation.
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+            class="bi bi-chevron-bar-down blinker mx-auto" style="margin-top: 33rem;" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M3.646 4.146a.5.5 0 0 1 .708 0L8 7.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zM1 11.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z" />
+        </svg>
+    </div>
+    <div>
+        <img class="">
+    </div>
+</body>
+
+</html>
