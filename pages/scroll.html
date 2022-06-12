@@ -14,21 +14,35 @@
 </head>
 
 <body>
-    <!-- add color transition time -->
     <style>
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
         .slide-in {
+            left: -550px;
+            opacity: 0.2;
             position: absolute;
-            animation: slideIn 2s ease-in-out forwards;
+            animation: slideIn 2s ease-in-out forwards .5s;
         }
 
         .blinker {
-            opacity: 0.5;
-            animation: blinker 2.5s linear infinite;
+            opacity: 0.6;
+            animation: blinker 2s linear infinite;
+        }
+
+        .sec-page {
+            cursor: default;
+            opacity: 0;
+        }
+
+        .fade-in {
+            animation: fadeIn 1.5s ease-in forwards;
         }
 
         @keyframes slideIn {
             from {
-                left: -450px;
+                left: -550px;
                 opacity: 0.2;
             }
 
@@ -43,36 +57,57 @@
                 opacity: 0.2;
             }
         }
-    </style>
-    <script>
-        getPassword();
 
-        function getPassword() {
-            const pw = "보라빛달";
-            input = prompt("아직 테스트 단계입니다.", "비밀번호 입력");
-            if (input == pw) {
-                return;
-            } else {
-                return getPassword();
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
             }
         }
-    </script>
-    <a href="../index.html" class="fixed w-6 h-6 inset-6 font-bold invisible lg:visible">P</a>
-    <div class="h-screen w-screen pt-60 text-4xl leading-normal">
+    </style>
+    <a href="../index.html" class="fixed w-6 h-6 inset-6 font-bold z-20 invisible lg:visible">P</a>
+    <div class="w-11/12 mx-auto pt-20 md:pt-40 text-4xl leading-normal fixed z-0">
         <div class="slide-in">
             <span class="text-6xl leading-loose">Welcome to Palette.<br></span>
             Scroll down to<br>
             check the animation.
         </div>
         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
-            class="bi bi-chevron-bar-down blinker mx-auto" style="margin-top: 33rem;" viewBox="0 0 16 16">
+            class="bi bi-chevron-bar-down blinker fixed inset-x-0 bottom-4 mx-auto z-0" viewBox="0 0 16 16">
             <path fill-rule="evenodd"
                 d="M3.646 4.146a.5.5 0 0 1 .708 0L8 7.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zM1 11.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z" />
         </svg>
     </div>
-    <div>
-        <img class="">
+    <div class="w-screen h-screen z-10 border-solid border-b"></div>
+    <div class="relative w-11/1 h-48 mx-auto pt-20 text-2xl flex flex-row justify-around bg-zinc-50 z-10">
+        <div class="sec-page">Palette</div>
+        <div class="sec-page">팔레트</div>
+        <div class="sec-page">จานสี</div>
+        <div class="sec-page">调色板</div>
+        <div class="sec-page">パレット</div>
     </div>
+    <script>
+        const contents = document.getElementsByClassName("sec-page");
+        const itemHeight = 150;
+        const itemLength = contents.length;
+
+        window.addEventListener("scroll", () => {
+            let height = window.scrollY;
+            if (height > itemHeight) {
+                for (let i = 0; i < itemLength; i++) {
+                    contents[i].classList.add("fade-in");
+                }
+            }
+            else {
+                for (let i = 0; i < itemLength; i++) {
+                    contents[i].classList.remove("fade-in");
+                }
+            }
+        })
+    </script>
 </body>
 
 </html>
